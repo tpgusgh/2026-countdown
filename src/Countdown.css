@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #000428, #004e92);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .countdown {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+  }
+  
+  .title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  
+  .time-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  .time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .time {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ffcc00;
+    text-shadow: 0 0 20px rgba(255, 204, 0, 0.9);
+  }
+  
+  .label {
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  }
+  
+  @keyframes starry-sky {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -2000px 0;
+    }
+  }
+  
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: starry-sky 60s linear infinite;
+    opacity: 0.2;
+  }
+  
