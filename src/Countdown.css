@@ -76,6 +76,7 @@ body {
     cursor: pointer;
     border-radius: 5px;
     text-transform: uppercase;
+    position: relative;
     letter-spacing: 1px;
   }
   
@@ -136,8 +137,8 @@ body {
   .imgsize {
     width: 25px;
     height: 25px;
-    position: fixed;
-    top: 75.5%;
+    position: absolute;
+    top: 50%;
     transform: translate(-50%, -50%); 
   }
   
