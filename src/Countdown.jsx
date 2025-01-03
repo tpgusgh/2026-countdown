@@ -46,7 +46,7 @@ const Countdown = () => {
       <div className="time-container">
         <div className="time-box">
           <span className="time">{padZero(timeLeft.days)}</span>
-          <span className="label">날</span>
+          <span className="label">일</span>
         </div>
         <div className="time-box">
           <span className="time">{padZero(timeLeft.hours)}</span>
