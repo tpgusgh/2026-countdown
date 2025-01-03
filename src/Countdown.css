@@ -22,6 +22,7 @@ body {
     margin-bottom: 20px;
     color: #ffffff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: glow 1.5s infinite alternate;
   }
   
   .time-container {
@@ -39,6 +40,7 @@ body {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: fade-in 1s ease-in-out;
   }
   
   .time {
@@ -46,12 +48,42 @@ body {
     font-weight: bold;
     color: #ffcc00;
     text-shadow: 0 0 20px rgba(255, 204, 0, 0.9);
+    animation: pulse 1s ease-in-out infinite;
   }
   
   .label {
     font-size: 1.2rem;
     color: #ffffff;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+    to {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.9);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   @keyframes starry-sky {
@@ -74,4 +106,3 @@ body {
     animation: starry-sky 60s linear infinite;
     opacity: 0.2;
   }
-  

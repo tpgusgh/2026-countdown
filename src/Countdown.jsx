@@ -21,7 +21,7 @@ const Countdown = () => {
     const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((difference / 1000 / 60) % 60);
     const seconds = Math.floor((difference / 1000) % 60);
-    const milliseconds = Math.floor(difference % 100);
+    const milliseconds = Math.floor((difference % 1000) / 10); // 10ms 단위로 표시
 
     return { days, hours, minutes, seconds, milliseconds };
   };
@@ -31,7 +31,7 @@ const Countdown = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
-    }, 10);
+    }, 100); // 100ms로 업데이트 주기를 늘림
 
     return () => clearInterval(timer);
   }, []);
