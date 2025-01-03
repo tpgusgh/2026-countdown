@@ -26,20 +26,30 @@ const Countdown = () => {
     return { days, hours, minutes, seconds, milliseconds };
   };
 
-
-
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const [currentDate, setCurrentDate] = useState(new Date().toLocaleDateString());
+  const [visitorCount, setVisitorCount] = useState(0);
 
 
   useEffect(() => {
+    const storedVisitorCount = localStorage.getItem("visitorCount");
+    
+    if (storedVisitorCount) {
+      setVisitorCount(Number(storedVisitorCount));
+    } else {
+      localStorage.setItem("visitorCount", "1");
+      setVisitorCount(1);
+    }
+    
+    localStorage.setItem("visitorCount", visitorCount + 1);
+
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
       setCurrentDate(new Date().toLocaleDateString());
     }, 100);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [visitorCount]);
 
   return (
     <div className={`countdown`}>
@@ -69,6 +79,7 @@ const Countdown = () => {
 
       <div className="current-date">
         <p>오늘: {currentDate}</p>
+        <p>사이트 총 방문 횟수: {visitorCount}</p> 
       </div>
 
       <div className="github-link">
