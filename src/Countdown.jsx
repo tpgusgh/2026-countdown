@@ -75,7 +75,7 @@ const Countdown = () => {
         <a href="https://github.com/tpgusgh" target="_blank" rel="noopener noreferrer">
           <button className="github-button">
             <img className="imgsize" src="/github-mark.svg" alt="GitHub" />
-            Go to My GitHub
+            ⠀⠀Go to My GitHub
           </button>
         </a>
       </div>
