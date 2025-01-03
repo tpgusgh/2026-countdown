@@ -15,7 +15,7 @@ body {
   text-align: center;
   z-index: 10;
   position: relative;
-  padding: 10px; /* Add some padding for mobile devices */
+  padding: 10px; 
 }
 
 .title {
@@ -31,7 +31,7 @@ body {
   justify-content: center;
   gap: 30px;
   margin-top: 20px;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: nowrap;
 }
 
 .time-box {
@@ -44,8 +44,8 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   animation: fade-in 1s ease-in-out;
   margin-bottom: 10px;
-  flex: 1 1 100px; /* Allow items to shrink and grow */
-  max-width: 120px; /* Limit width on smaller screens */
+  flex: 1 1 100px;
+  max-width: 120px; 
 }
 
 .time {
@@ -147,10 +147,9 @@ body::before {
   transform: translate(-50%, -50%);
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .title {
-    font-size: 2.5rem; /* Smaller title font size */
+    font-size: 2.5rem;
   }
 
   .time-container {
@@ -160,15 +159,15 @@ body::before {
 
   .time-box {
     padding: 15px;
-    max-width: 90px; /* Adjust max width for mobile */
+    max-width: 90px;
   }
 
   .time {
-    font-size: 3rem; /* Smaller time font size */
+    font-size: 3rem;
   }
 
   .label {
-    font-size: 1rem; /* Smaller label font size */
+    font-size: 1rem;
   }
 
   .github-button {
@@ -183,26 +182,25 @@ body::before {
 
 @media (max-width: 480px) {
   .title {
-    font-size: 2rem; /* Even smaller title font size */
+    font-size: 2rem;
   }
 
   .time-container {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center;
-    gap: 10px; /* Reduce gap between elements */
+    gap: 10px; 
+    margin-top: 15px;
   }
 
   .time-box {
-    flex: 1 1 50px; /* Allow for even smaller time boxes */
-    max-width: 80px; /* Reduce max-width for very small screens */
+    flex: 1 1 50px; 
+    max-width: 80px;
   }
 
   .time {
-    font-size: 2.5rem; /* Smaller time font size */
+    font-size: 2.5rem;
   }
 
   .label {
-    font-size: 0.9rem; /* Smaller label font size */
+    font-size: 0.9rem;
   }
 
   .github-button {

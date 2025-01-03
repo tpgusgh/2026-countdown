@@ -26,11 +26,10 @@ const Countdown = () => {
     return { days, hours, minutes, seconds, milliseconds };
   };
 
-
+  const padZero = (num) => (num < 10 ? `0${num}` : num);
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const [currentDate, setCurrentDate] = useState(new Date().toLocaleDateString());
-
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -46,23 +45,23 @@ const Countdown = () => {
       <h1 className="title">2026 카운트 다운</h1>
       <div className="time-container">
         <div className="time-box">
-          <span className="time">{timeLeft.days}</span>
+          <span className="time">{padZero(timeLeft.days)}</span>
           <span className="label">날</span>
         </div>
         <div className="time-box">
-          <span className="time">{timeLeft.hours}</span>
+          <span className="time">{padZero(timeLeft.hours)}</span>
           <span className="label">시간</span>
         </div>
         <div className="time-box">
-          <span className="time">{timeLeft.minutes}</span>
+          <span className="time">{padZero(timeLeft.minutes)}</span>
           <span className="label">분</span>
         </div>
         <div className="time-box">
-          <span className="time">{timeLeft.seconds}</span>
+          <span className="time">{padZero(timeLeft.seconds)}</span>
           <span className="label">초</span>
         </div>
         <div className="time-box">
-          <span className="time">{timeLeft.milliseconds}</span>
+          <span className="time">{padZero(timeLeft.milliseconds)}</span>
           <span className="label">밀리초</span>
         </div>
       </div>
