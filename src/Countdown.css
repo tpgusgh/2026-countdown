@@ -57,6 +57,32 @@ body {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
   }
   
+  .current-date {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #ffffff;
+  }
+  
+  .github-link {
+    margin-top: 20px;
+  }
+  
+  .github-button {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .github-button:hover {
+    background-color: #555;
+  }
+  
   @keyframes glow {
     from {
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
@@ -106,3 +132,13 @@ body {
     animation: starry-sky 60s linear infinite;
     opacity: 0.2;
   }
+  
+  .imgsize {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 140%;
+    left: 144%; 
+    transform: translate(-50%, -50%); 
+  }
+  

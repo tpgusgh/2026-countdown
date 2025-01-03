@@ -21,17 +21,19 @@ const Countdown = () => {
     const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((difference / 1000 / 60) % 60);
     const seconds = Math.floor((difference / 1000) % 60);
-    const milliseconds = Math.floor((difference % 1000) / 10); // 10ms 단위로 표시
+    const milliseconds = Math.floor((difference % 1000) / 10);
 
     return { days, hours, minutes, seconds, milliseconds };
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [currentDate, setCurrentDate] = useState(new Date().toLocaleDateString());
 
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
-    }, 100); // 100ms로 업데이트 주기를 늘림
+      setCurrentDate(new Date().toLocaleDateString()); // Update date every day
+    }, 100);
 
     return () => clearInterval(timer);
   }, []);
@@ -60,6 +62,16 @@ const Countdown = () => {
           <span className="time">{timeLeft.milliseconds}</span>
           <span className="label">Milliseconds</span>
         </div>
+      </div>
+
+      <div className="current-date">
+        <p>Today's Date: {currentDate}</p>
+      </div>
+
+      <div className="github-link">
+        <a href="https://github.com/tpgusgh" target="_blank" rel="noopener noreferrer">
+          <button className="github-button"><img className="imgsize" src="/github-mark.svg" /> Go to My GitHub</button>
+        </a>
       </div>
     </div>
   );
