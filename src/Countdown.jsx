@@ -30,26 +30,26 @@ const Countdown = () => {
   const [currentDate, setCurrentDate] = useState(new Date().toLocaleDateString());
   const [visitorCount, setVisitorCount] = useState(0);
 
-
   useEffect(() => {
     const storedVisitorCount = localStorage.getItem("visitorCount");
-    
+
     if (storedVisitorCount) {
       setVisitorCount(Number(storedVisitorCount));
     } else {
       localStorage.setItem("visitorCount", "1");
       setVisitorCount(1);
     }
-    
-    localStorage.setItem("visitorCount", visitorCount + 1);
 
+    const currentVisitorCount = Number(localStorage.getItem("visitorCount") || "0");
+    localStorage.setItem("visitorCount", currentVisitorCount + 1);
+    
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
       setCurrentDate(new Date().toLocaleDateString());
     }, 100);
 
     return () => clearInterval(timer);
-  }, [visitorCount]);
+  }, []); 
 
   return (
     <div className={`countdown`}>
