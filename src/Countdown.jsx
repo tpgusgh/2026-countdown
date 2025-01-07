@@ -35,7 +35,7 @@ const Countdown = () => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
       setCurrentDate(new Date().toLocaleDateString());
-    }, 10);
+    }, 1);
 
     return () => clearInterval(timer);
   }, []);
